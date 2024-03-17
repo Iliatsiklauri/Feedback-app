@@ -1,3 +1,6 @@
+import { Dispatch, SetStateAction } from 'react';
+import { createContext } from 'react';
+
 type User = {
   image: string;
   name: string;
@@ -10,7 +13,7 @@ type Reply = {
   user: User;
 };
 
-type comments = {
+export type comments = {
   id: number;
   content: string;
   user: User;
@@ -43,3 +46,18 @@ export type Params = {
     id: number;
   };
 };
+
+export const arr = [
+  { title: 'UI', number: 0 },
+  { title: 'All', number: 1 },
+  { title: 'UX', number: 2 },
+  { title: 'Feature', number: 3 },
+  { title: 'Enhancement', number: 4 },
+];
+
+type GlobalTypes = {
+  category: string | null;
+  setCategory: Dispatch<SetStateAction<string | null>>;
+};
+
+export const BurgerStates = createContext<GlobalTypes | null>(null);

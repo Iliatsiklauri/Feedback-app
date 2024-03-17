@@ -5,7 +5,7 @@ export default function Card({
   category,
   upvotes,
   description,
-  comments,
+  comments: comments,
 }: ProductRequest) {
   return (
     <div className="w-[93%] rounded-xl bg-white flex flex-col justify-center items-start p-5 gap-5">
