@@ -7,8 +7,6 @@ export default function page({ params }: Params) {
   const [data, setData] = useState<any>();
   useEffect(() => {
     setData(res.productRequests[params.id - 1]);
-    console.log(res.productRequests[params.id - 1]);
-    console.log(data);
-  }, []);
-  return <div>{res.productRequests[params.id - 1].title}</div>;
+  }, [params.id]);
+  return <div>{data?.title}</div>;
 }

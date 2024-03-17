@@ -18,11 +18,11 @@ type comments = {
 };
 
 export type ProductRequest = {
-  id: number;
+  id?: number;
   title: string;
   category: string;
   upvotes: number;
-  status: string;
+  status?: string;
   description: string;
   comments?: comments[];
 };
