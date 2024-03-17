@@ -1,7 +1,8 @@
 import { useContext, useState } from 'react';
 import { BurgerStates } from '../data';
 import { arr } from '../data';
-export default function CategoryBox() {
+import { motion } from 'framer-motion';
+export default function CategoryBox({ burger }: { burger: boolean }) {
   const [number, setNumber] = useState(0);
   const context = useContext(BurgerStates);
   if (!context) {
@@ -10,7 +11,12 @@ export default function CategoryBox() {
   const { setCategory } = context;
 
   return (
-    <div className="h-44 w-[85%] bg-white rounded-xl p-6 flex items-center justify-start  gap-2 flex-wrap">
+    <motion.div
+      className="h-44 w-[85%] bg-white rounded-xl p-6 flex items-center justify-start  gap-2 flex-wrap"
+      initial={{ x: '100%' }}
+      animate={{ x: !burger ? '100%' : 0 }}
+      transition={{ type: 'spring', damping: 23, delay: 0.2 }}
+    >
       {arr.map((el, key) => (
         <div
           key={key}
@@ -27,6 +33,6 @@ export default function CategoryBox() {
           {el.title}
         </div>
       ))}
-    </div>
+    </motion.div>
   );
 }

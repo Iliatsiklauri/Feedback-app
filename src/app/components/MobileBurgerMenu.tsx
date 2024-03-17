@@ -9,8 +9,8 @@ export default function MobileBurgerMenu({ burger }: { burger: boolean }) {
       animate={{ x: !burger ? '100%' : 0 }}
       transition={{ type: 'spring', damping: 23 }}
     >
-      <CategoryBox />
-      <Roadmap />
+      <CategoryBox burger={burger} />
+      <Roadmap burger={burger} />
     </motion.div>
   );
 }

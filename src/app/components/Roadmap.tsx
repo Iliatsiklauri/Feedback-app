@@ -1,14 +1,20 @@
 import { useContext } from 'react';
 import { BurgerStates } from '../data';
+import { motion } from 'framer-motion';
 
-export default function Roadmap() {
+export default function Roadmap({ burger }: { burger: boolean }) {
   const context = useContext(BurgerStates);
   if (!context) {
     return <h1>no context</h1>;
   }
-  const { filteredData } = context;
+  // const { filteredData } = context;
   return (
-    <div className="h-44 w-[85%] bg-white rounded-xl py-4 px-6 flex items-center justify-between">
+    <motion.div
+      className="h-44 w-[85%] bg-white rounded-xl py-4 px-6 flex items-center justify-between"
+      initial={{ x: '100%' }}
+      animate={{ x: !burger ? '100%' : 0 }}
+      transition={{ type: 'spring', damping: 23, delay: 0.4 }}
+    >
       <div className="flex flex-col items-start justify-center gap-6">
         <h2 className="text-lg font-bold text-[#3A4374]">Roadmap</h2>
         <div className="flex items-start justify-center flex-col gap-2 text-[#647196]">
@@ -36,6 +42,6 @@ export default function Roadmap() {
           <p className="text-[#647196] font-bold">1</p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
