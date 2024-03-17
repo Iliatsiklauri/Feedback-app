@@ -11,8 +11,9 @@ export default function CategoryBox() {
 
   return (
     <div className="h-44 w-[85%] bg-white rounded-xl p-6 flex items-center justify-start  gap-2 flex-wrap">
-      {arr.map((el) => (
+      {arr.map((el, key) => (
         <div
+          key={key}
           className={`text-center text-sm cursor-pointer font-semibold   rounded-xl px-4 py-1 flex-shrink-0 inline-block min-w-min ${
             el.number !== number
               ? 'text-[#4661E6] bg-[#F2F4FF]'

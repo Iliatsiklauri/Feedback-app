@@ -12,21 +12,24 @@ import Mobileback from './components/Mobileback';
 export default function Home() {
   const [jsonData, setJsonData] = useState<JSONData | null>(null);
   const [burger, setBurger] = useState(false);
-  const [category, setCategory] = useState<string | null>(null);
+  const [category, setCategory] = useState<string>('All');
 
   useEffect(() => {
     setJsonData(data);
   }, []);
-
+  const filteredData =
+    category === 'All'
+      ? jsonData?.productRequests
+      : jsonData?.productRequests.filter((el) => el.category === category);
   return (
-    <div className="flex flex-col items-center justify-center relative w-full bg-[#F7F8FD]">
+    <div className="flex flex-col items-center relative w-full bg-[#F7F8FD] min-h-[101vh]">
       <Mobileback burger={burger} />
       <BurgerStates.Provider value={{ category, setCategory }}>
         <MobileBurgerMenu burger={burger} />
       </BurgerStates.Provider>
       <MobileHeader burger={burger} setBurger={setBurger} />
       <Sortby />
-      {jsonData?.productRequests.map((el: ProductRequest, key) => (
+      {filteredData?.map((el: ProductRequest, key) => (
         <Link
           key={key}
           className="w-full items-center mt-8 justify-center  flex-col flex"

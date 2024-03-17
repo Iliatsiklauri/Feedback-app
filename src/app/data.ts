@@ -48,8 +48,8 @@ export type Params = {
 };
 
 export const arr = [
-  { title: 'UI', number: 0 },
-  { title: 'All', number: 1 },
+  { title: 'All', number: 0 },
+  { title: 'UI', number: 1 },
   { title: 'UX', number: 2 },
   { title: 'Feature', number: 3 },
   { title: 'Enhancement', number: 4 },
@@ -57,7 +57,7 @@ export const arr = [
 
 type GlobalTypes = {
   category: string | null;
-  setCategory: Dispatch<SetStateAction<string | null>>;
+  setCategory: Dispatch<SetStateAction<string>>;
 };
 
 export const BurgerStates = createContext<GlobalTypes | null>(null);
