@@ -1,22 +1,24 @@
 'use client';
-import { useState, useEffect } from 'react';
-import data from './data.json';
-import { BurgerStates, JSONData, ProductRequest } from './data';
+import { useState, useContext } from 'react';
+import { BurgerStates, ProductRequest } from './data';
 import Link from 'next/link';
 import MobileHeader from './components/MobileHeader';
 import Card from './components/Card';
 import Sortby from './components/Sortby';
 import MobileBurgerMenu from './components/MobileBurgerMenu';
 import Mobileback from './components/Mobileback';
+import { GlobalProvider } from './GlobalStates';
 
 export default function Home() {
-  const [jsonData, setJsonData] = useState<JSONData | null>(null);
   const [burger, setBurger] = useState(false);
   const [category, setCategory] = useState<string>('All');
 
-  useEffect(() => {
-    setJsonData(data);
-  }, []);
+  const context = useContext(GlobalProvider);
+  if (!context) {
+    return <h1>no context</h1>;
+  }
+  const jsonData = context;
+
   const filteredData =
     category === 'All'
       ? jsonData?.productRequests
@@ -24,12 +26,12 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center relative w-full bg-[#F7F8FD] min-h-[101vh]">
       <Mobileback burger={burger} />
-      <BurgerStates.Provider value={{ category, setCategory }}>
+      <BurgerStates.Provider value={{ category, setCategory, filteredData }}>
         <MobileBurgerMenu burger={burger} />
       </BurgerStates.Provider>
       <MobileHeader burger={burger} setBurger={setBurger} />
       <Sortby />
-      {filteredData?.map((el: ProductRequest, key) => (
+      {filteredData?.map((el: ProductRequest, key: number) => (
         <Link
           key={key}
           className="w-full items-center mt-8 justify-center  flex-col flex"

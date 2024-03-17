@@ -58,6 +58,7 @@ export const arr = [
 type GlobalTypes = {
   category: string | null;
   setCategory: Dispatch<SetStateAction<string>>;
+  filteredData?: ProductRequest[];
 };
 
 export const BurgerStates = createContext<GlobalTypes | null>(null);
