@@ -7,7 +7,7 @@ type User = {
   username: string;
 };
 
-type Reply = {
+export type Reply = {
   content: string;
   replyingTo: string;
   user: User;
@@ -24,7 +24,7 @@ export type ProductRequest = {
   id?: number;
   title: string;
   category: string;
-  upvotes: number;
+  upvotes?: number;
   status?: string;
   description: string;
   comments?: comments[];

@@ -24,7 +24,7 @@ export default function Home() {
       ? jsonData?.productRequests
       : jsonData?.productRequests.filter((el) => el.category === category);
   return (
-    <div className="flex flex-col items-center relative w-full bg-[#F7F8FD] min-h-[101vh]">
+    <div className="flex flex-col items-center relative w-full bg-[#F7F8FD] min-h-[101vh] pb-5">
       <Mobileback burger={burger} />
       <BurgerStates.Provider value={{ category, setCategory, filteredData }}>
         <MobileBurgerMenu burger={burger} />
