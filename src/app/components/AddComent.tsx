@@ -4,15 +4,15 @@ import Button from './Button';
 import { GlobalProvider } from '../GlobalStates';
 
 export default function AddComent({ id }: { id: number }) {
+  const [length, setLength] = useState(250);
+  const [text, setText] = useState('');
   const context = useContext(GlobalProvider);
   if (!context) {
     return <h1>no context</h1>;
   }
+  const { setJsonData } = context;
   const jsonData = context.jsonData?.productRequests[id];
   const userData = context.jsonData?.currentUser;
-  const { setJsonData } = context;
-  const [length, setLength] = useState(250);
-  const [text, setText] = useState('');
   const setComment = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // TODO: add setJsonData intead of jsondata.push
