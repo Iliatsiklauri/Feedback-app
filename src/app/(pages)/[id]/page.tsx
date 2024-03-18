@@ -11,7 +11,7 @@ export default function Page({ params }: Params) {
   if (!context) {
     return <h1>no context</h1>;
   }
-  const jsonData = context.productRequests[params.id - 1];
+  const jsonData = context.jsonData?.productRequests[params.id - 1];
 
   return (
     <div className="py-6 flex flex-col items-center justify-center bg-[#F7F8FD]">

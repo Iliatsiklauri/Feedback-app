@@ -21,8 +21,8 @@ export default function Home() {
 
   const filteredData =
     category === 'All'
-      ? jsonData?.productRequests
-      : jsonData?.productRequests.filter((el) => el.category === category);
+      ? jsonData?.jsonData?.productRequests
+      : jsonData?.jsonData?.productRequests.filter((el) => el.category === category);
   return (
     <div className="flex flex-col items-center relative w-full bg-[#F7F8FD] min-h-[101vh] pb-5">
       <Mobileback burger={burger} />

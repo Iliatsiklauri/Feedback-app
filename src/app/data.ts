@@ -16,7 +16,7 @@ export type Reply = {
 export type comments = {
   id: number;
   content: string;
-  user: User;
+  user?: User;
   replies?: Reply[];
 };
 
@@ -39,6 +39,10 @@ type CurrentUser = {
 export type JSONData = {
   currentUser: CurrentUser;
   productRequests: ProductRequest[];
+};
+export type parent = {
+  jsonData: JSONData | null;
+  setJsonData: Dispatch<SetStateAction<JSONData | null>>;
 };
 
 export type Params = {

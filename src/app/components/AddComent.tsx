@@ -1,5 +1,5 @@
 'use client';
-import { FormEvent, useContext, useEffect, useState } from 'react';
+import { FormEvent, useContext, useState } from 'react';
 import Button from './Button';
 import { GlobalProvider } from '../GlobalStates';
 
@@ -8,19 +8,23 @@ export default function AddComent({ id }: { id: number }) {
   if (!context) {
     return <h1>no context</h1>;
   }
-  const jsonData = context.productRequests[id];
-  const userData = context.currentUser;
+  const jsonData = context.jsonData?.productRequests[id];
+  const userData = context.jsonData?.currentUser;
+  const { setJsonData } = context;
   const [length, setLength] = useState(250);
   const [text, setText] = useState('');
   const setComment = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    // TODO: add setJsonData intead of jsondata.push
     jsonData?.comments?.push({
       id: 6,
       content: text,
       user: userData,
     });
+    // setJsonData([...jsonData, { name: 'ilia' }]);
+
     setText('');
-    console.log(jsonData.comments?.length);
+    console.log(jsonData?.comments?.length);
   };
   return (
     <form
