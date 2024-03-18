@@ -1,5 +1,4 @@
 import { ProductRequest } from '../data';
-
 export default function Card({
   title,
   category,
