@@ -1,6 +1,7 @@
 import React, { FormEvent, useContext, useState } from 'react';
 import Button from './Button';
 import { GlobalProvider } from '../GlobalStates';
+import { JSONData } from '../data';
 
 export default function AddComent({ id }: { id: number }) {
   const [length, setLength] = useState(250);
@@ -17,16 +18,27 @@ export default function AddComent({ id }: { id: number }) {
 
   const setComment = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // TODO: add setJsonData instead of jsondata.push
-    jsonData?.comments?.push({
-      id: 6,
-      content: text,
-      user: userData,
-    });
-    // setJsonData([...jsonData, { name: 'ilia' }]);
+    if (text !== '') {
+      const obj = {
+        id: 6,
+        content: text,
+        user: userData,
+      };
+
+      const updatedComments = [...(jsonData?.comments ?? []), obj];
+      setJsonData((prevJsonData) => {
+        if (!prevJsonData) return null;
+        return {
+          ...prevJsonData,
+          productRequests: prevJsonData.productRequests.map((productRequest, index) => {
+            if (index !== id) return productRequest;
+            return { ...productRequest, comments: updatedComments };
+          }),
+        };
+      });
+    }
 
     setText('');
-    console.log(jsonData?.comments?.length);
   };
 
   return (

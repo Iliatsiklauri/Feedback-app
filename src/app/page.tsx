@@ -12,6 +12,8 @@ import { GlobalProvider } from './GlobalStates';
 export default function Home() {
   const [burger, setBurger] = useState(false);
   const [category, setCategory] = useState<string>('All');
+  const [modal, setModal] = useState(false);
+  const [sorting, setSorting] = useState<string | null>(null);
 
   const context = useContext(GlobalProvider);
   if (!context) {
@@ -29,8 +31,8 @@ export default function Home() {
       <BurgerStates.Provider value={{ category, setCategory, filteredData }}>
         <MobileBurgerMenu burger={burger} />
       </BurgerStates.Provider>
-      <MobileHeader burger={burger} setBurger={setBurger} />
-      <Sortby />
+      <MobileHeader burger={burger} setBurger={setBurger} setModal={setModal} />
+      <Sortby modal={modal} setModal={setModal} />
       {filteredData?.map((el: ProductRequest, key: number) => (
         <Link
           key={key}

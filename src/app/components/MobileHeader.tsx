@@ -3,9 +3,11 @@ import { Dispatch, SetStateAction } from 'react';
 export default function MobileHeader({
   setBurger,
   burger,
+  setModal,
 }: {
   burger: boolean;
   setBurger: Dispatch<SetStateAction<boolean>>;
+  setModal: Dispatch<SetStateAction<boolean>>;
 }) {
   return (
     <div className="h-[72px] w-full header flex items-center justify-between px-6 z-20">
@@ -19,7 +21,10 @@ export default function MobileHeader({
         }
         alt=""
         className={`cursor-pointer ${burger ? 'h-4 w-4' : null}`}
-        onClick={() => setBurger(!burger)}
+        onClick={() => {
+          setBurger(!burger);
+          setModal(false);
+        }}
       />
     </div>
   );
