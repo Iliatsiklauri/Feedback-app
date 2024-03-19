@@ -13,7 +13,7 @@ export default function Home() {
   const [burger, setBurger] = useState(false);
   const [category, setCategory] = useState<string>('All');
   const [modal, setModal] = useState(false);
-  // const [sorting, setSorting] = useState<string | null>(null);
+  const [sorting, setSorting] = useState<string>('Most Upvotes');
 
   const context = useContext(GlobalProvider);
   if (!context) {
@@ -21,10 +21,22 @@ export default function Home() {
   }
   const jsonData = context;
 
-  const filteredData =
+  let filteredData =
     category === 'All'
       ? jsonData?.jsonData?.productRequests
       : jsonData?.jsonData?.productRequests.filter((el) => el.category === category);
+  filteredData?.sort((el, ele) =>
+    sorting === 'Most Upvotes'
+      ? ele.upvotes - el.upvotes
+      : sorting === 'Least Upvotes'
+      ? el.upvotes - ele.upvotes
+      : sorting === 'Most Comments'
+      ? ele.comments?.length - el.comments?.length
+      : sorting === 'Least Comments'
+      ? el.comments?.length - ele.comments?.length
+      : 0
+  );
+
   return (
     <div className="flex flex-col items-center relative w-full bg-[#F7F8FD] min-h-[101vh] pb-5">
       <Mobileback burger={burger} />
@@ -32,7 +44,12 @@ export default function Home() {
         <MobileBurgerMenu burger={burger} />
       </BurgerStates.Provider>
       <MobileHeader burger={burger} setBurger={setBurger} setModal={setModal} />
-      <Sortby modal={modal} setModal={setModal} />
+      <Sortby
+        modal={modal}
+        setModal={setModal}
+        setSorting={setSorting}
+        sorting={sorting}
+      />
       {filteredData?.map((el: ProductRequest, key: number) => (
         <Link
           key={key}

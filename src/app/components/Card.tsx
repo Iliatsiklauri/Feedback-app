@@ -26,7 +26,7 @@ export default function Card({
           className="flex-shrink-0 w-[18px] h-4"
         />
         <p className="w-[18px] h-4 font-bold text-sm  flex items-center justify-center text-[#3A4374]">
-          {comments?.length}
+          {comments?.length ? comments.length : 0}
         </p>
       </div>
     </div>

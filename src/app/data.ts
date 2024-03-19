@@ -24,10 +24,10 @@ export type ProductRequest = {
   id?: number;
   title: string;
   category: string;
-  upvotes?: number;
+  upvotes: number;
   status?: string;
   description: string;
-  comments?: comments[];
+  comments: comments[];
 };
 
 type CurrentUser = {
