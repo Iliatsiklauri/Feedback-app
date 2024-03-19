@@ -9,7 +9,7 @@ export default function Sortby({ modal, setModal }: PropType) {
   return (
     <div className="bg-[#373F68] h-14 w-full gap-[10%] flex items-center justify-center relative z-0">
       <motion.div
-        className="overflow-hidden top-16 rounded-xl w-[200px] h-[200px] bg-white absolute modal"
+        className="overflow-hidden top-16 rounded-xl w-[200px] h-[200px] bg-white absolute modal opacity-0"
         animate={{
           height: modal ? '200px' : 0,
           width: modal ? '200px' : 0,

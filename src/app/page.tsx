@@ -13,7 +13,7 @@ export default function Home() {
   const [burger, setBurger] = useState(false);
   const [category, setCategory] = useState<string>('All');
   const [modal, setModal] = useState(false);
-  const [sorting, setSorting] = useState<string | null>(null);
+  // const [sorting, setSorting] = useState<string | null>(null);
 
   const context = useContext(GlobalProvider);
   if (!context) {
