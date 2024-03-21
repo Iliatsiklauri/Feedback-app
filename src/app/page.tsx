@@ -20,25 +20,10 @@ export default function Home() {
     return <h1>no context</h1>;
   }
   const { jsonData, setJsonData } = context;
-  useEffect(() => {
-    console.log(jsonData);
-  }, [jsonData]);
   let filteredData =
     category === 'All'
       ? jsonData?.productRequests
       : jsonData?.productRequests.filter((el) => el.category === category);
-  filteredData?.sort((el, ele) =>
-    sorting === 'Most Upvotes'
-      ? ele.upvotes - el.upvotes
-      : sorting === 'Least Upvotes'
-      ? el.upvotes - ele.upvotes
-      : sorting === 'Most Comments'
-      ? ele.comments?.length - el.comments?.length
-      : sorting === 'Least Comments'
-      ? el.comments?.length - ele.comments?.length
-      : 0
-  );
-
   return (
     <div className="flex flex-col items-center relative w-full bg-[#F7F8FD] min-h-[101vh] pb-5">
       <Mobileback burger={burger} />
@@ -57,7 +42,7 @@ export default function Home() {
           key={key}
           className="w-full items-center mt-8 justify-center  flex-col flex"
           href={`${el.id}`}
-          onClick={() => console.log(el.id - 1)}
+          onClick={() => console.log(el.id)}
         >
           <p>{el.id}</p>
           <Card

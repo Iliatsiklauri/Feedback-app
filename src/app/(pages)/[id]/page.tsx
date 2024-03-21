@@ -18,11 +18,12 @@ export default function Page({ params }: Params) {
       <div className=" gap-6 flex flex-col items-center justify-center w-full">
         <Aboutheader display={true} />
         <Card
+          id={jsonData?.id || 0}
           category={`${jsonData?.category}`}
           description={`${jsonData?.description}`}
           title={`${jsonData?.title}`}
-          upvotes={jsonData?.upvotes}
-          comments={jsonData?.comments}
+          upvotes={jsonData?.upvotes || 0}
+          comments={jsonData?.comments || []}
         />
 
         <Comments comments={jsonData?.comments} />
