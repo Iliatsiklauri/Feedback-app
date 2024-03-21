@@ -24,6 +24,7 @@ export default function Page({ params }: Params) {
           upvotes={jsonData?.upvotes}
           comments={jsonData?.comments}
         />
+
         <Comments comments={jsonData?.comments} />
         <AddComent id={params.id - 1} />
       </div>

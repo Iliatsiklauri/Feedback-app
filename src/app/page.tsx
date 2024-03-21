@@ -1,5 +1,5 @@
 'use client';
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { BurgerStates, ProductRequest } from './data';
 import Link from 'next/link';
 import MobileHeader from './components/MobileHeader';
@@ -19,12 +19,14 @@ export default function Home() {
   if (!context) {
     return <h1>no context</h1>;
   }
-  const jsonData = context;
-
+  const { jsonData, setJsonData } = context;
+  useEffect(() => {
+    console.log(jsonData);
+  }, [jsonData]);
   let filteredData =
     category === 'All'
-      ? jsonData?.jsonData?.productRequests
-      : jsonData?.jsonData?.productRequests.filter((el) => el.category === category);
+      ? jsonData?.productRequests
+      : jsonData?.productRequests.filter((el) => el.category === category);
   filteredData?.sort((el, ele) =>
     sorting === 'Most Upvotes'
       ? ele.upvotes - el.upvotes
@@ -55,8 +57,11 @@ export default function Home() {
           key={key}
           className="w-full items-center mt-8 justify-center  flex-col flex"
           href={`${el.id}`}
+          onClick={() => console.log(el.id - 1)}
         >
+          <p>{el.id}</p>
           <Card
+            id={el.id}
             category={`${el.category}`}
             description={`${el.description}`}
             title={`${el.title}`}
