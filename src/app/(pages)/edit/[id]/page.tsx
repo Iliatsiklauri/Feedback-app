@@ -1,7 +1,5 @@
 'use client';
-
 import { GlobalProvider } from '@/app/GlobalStates';
-import Aboutheader from '@/app/components/Aboutheader';
 import Button from '@/app/components/Button';
 import Link from 'next/link';
 import { useContext } from 'react';

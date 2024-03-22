@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useEffect } from 'react';
+import { Dispatch, SetStateAction } from 'react';
 import Button from './Button';
 import { motion } from 'framer-motion';
 import { JSONData, ProductRequest } from '../data';
