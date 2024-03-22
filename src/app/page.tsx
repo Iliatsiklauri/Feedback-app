@@ -36,15 +36,15 @@ export default function Home() {
         setModal={setModal}
         setSorting={setSorting}
         sorting={sorting}
+        filteredData={filteredData || []}
+        setJsonData={setJsonData}
       />
       {filteredData?.map((el: ProductRequest, key: number) => (
         <Link
           key={key}
           className="w-full items-center mt-8 justify-center  flex-col flex"
           href={`${el.id}`}
-          onClick={() => console.log(el.id)}
         >
-          <p>{el.id}</p>
           <Card
             id={el.id}
             category={`${el.category}`}

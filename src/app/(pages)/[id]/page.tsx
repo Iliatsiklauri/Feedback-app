@@ -16,7 +16,7 @@ export default function Page({ params }: Params) {
   return (
     <div className="py-6 flex flex-col items-center justify-center bg-[#F7F8FD]">
       <div className=" gap-6 flex flex-col items-center justify-center w-full">
-        <Aboutheader display={true} />
+        <Aboutheader display={true} id={params.id} />
         <Card
           id={jsonData?.id || 0}
           category={`${jsonData?.category}`}

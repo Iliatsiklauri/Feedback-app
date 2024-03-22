@@ -11,7 +11,7 @@ export default function Button({ color, content, width }: PropType) {
         background: color ? `${color}` : '#AD1FEA',
         width: width ? `${width}` : '133px',
       }}
-      className="flex items-center justify-center cursor-pointer h-10 rounded-xl flex-shrink-0"
+      className="flex items-center justify-center cursor-pointer h-11 rounded-xl flex-shrink-0"
     >
       <p className="font-bold text-xs text-[#F2F4FE]">{content}</p>
     </div>

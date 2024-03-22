@@ -1,13 +1,24 @@
-import { Dispatch, SetStateAction } from 'react';
+import { Dispatch, SetStateAction, useEffect } from 'react';
 import Button from './Button';
 import { motion } from 'framer-motion';
+import { JSONData, ProductRequest } from '../data';
+import Link from 'next/link';
 type PropType = {
   modal: boolean;
   setModal: Dispatch<SetStateAction<boolean>>;
   setSorting: Dispatch<SetStateAction<string>>;
   sorting: string;
+  setJsonData: Dispatch<SetStateAction<JSONData | null>>;
+  filteredData: ProductRequest[];
 };
-export default function Sortby({ modal, setModal, setSorting, sorting }: PropType) {
+export default function Sortby({
+  modal,
+  setModal,
+  setSorting,
+  sorting,
+  setJsonData,
+  filteredData,
+}: PropType) {
   return (
     <div className="bg-[#373F68] h-14 w-full gap-[7%] flex items-center justify-center relative z-0">
       <motion.div
@@ -23,7 +34,9 @@ export default function Sortby({ modal, setModal, setSorting, sorting }: PropTyp
           animate={{ y: modal ? 0 : -400 }}
           transition={{ type: 'spring', delay: 0.3, damping: 10 }}
           className="w-full text-center h-1/4 border-b-[1px] border-[#3A4374] border-opacity-15 text-[#647196] flex items-center justify-between pr-4 pl-6 hover:text-[#AD1FEA] text-sm cursor-pointer"
-          onClick={() => setSorting('Most Upvotes')}
+          onClick={() => {
+            setSorting('Most Upvotes');
+          }}
         >
           Most Upvotes
           {sorting === 'Most Upvotes' && <img src="shared\icon-check.svg" alt="" />}
@@ -70,7 +83,9 @@ export default function Sortby({ modal, setModal, setSorting, sorting }: PropTyp
           <img src="shared\icon-arrow-down1.svg" alt="" />
         </motion.div>
       </div>
-      <Button content="+ Add Feedback" />
+      <Link href={'/add'}>
+        <Button content="+ Add Feedback" />
+      </Link>
     </div>
   );
 }
