@@ -2,7 +2,11 @@ import { useContext, useState } from 'react';
 import { BurgerStates } from '../data';
 import { arr } from '../data';
 import { motion } from 'framer-motion';
-export default function CategoryBox({ burger }: { burger: boolean }) {
+type propType = {
+  burger: boolean;
+  display: boolean;
+};
+export default function CategoryBox({ burger, display }: propType) {
   const [number, setNumber] = useState(0);
   const context = useContext(BurgerStates);
   if (!context) {
@@ -12,9 +16,8 @@ export default function CategoryBox({ burger }: { burger: boolean }) {
 
   return (
     <motion.div
-      className="h-44 w-[85%] bg-white rounded-xl p-6 flex items-center justify-start  gap-2 flex-wrap"
-      initial={{ x: '100%' }}
-      animate={{ x: !burger ? '100%' : 0 }}
+      className="h-44 w-[85%] bg-white rounded-xl p-6 flex items-center justify-start  gap-2 flex-wrap  md:w-[30%] md:h-full "
+      animate={{ x: display ? 0 : !burger ? '100%' : 0 }}
       transition={{ type: 'spring', damping: 23, delay: 0.2 }}
     >
       {arr.map((el, key) => (

@@ -20,7 +20,8 @@ export default function Sortby({
   filteredData,
 }: PropType) {
   return (
-    <div className="bg-[#373F68] h-14 w-full gap-[7%] flex items-center justify-center relative z-0">
+    <div className="bg-[#373F68] h-14 w-full gap-[7%] flex items-center justify-center relative z-0 md:max-w-[93%] md:h-18  md:rounded-md md:justify-around">
+      <img src="\suggestions\icon-suggestions.svg" alt="" className="hidden md:block" />
       <motion.div
         className="overflow-hidden top-16 rounded-xl w-[200px] h-[200px] bg-white absolute modal opacity-0"
         animate={{

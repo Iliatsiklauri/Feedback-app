@@ -7,10 +7,10 @@ export default function Roadmap({ burger }: { burger: boolean }) {
   if (!context) {
     return <h1>no context</h1>;
   }
-  // const { filteredData } = context;
+  const { filteredData } = context;
   return (
     <motion.div
-      className="h-44 w-[85%] bg-white rounded-xl py-4 px-6 flex items-center justify-between"
+      className="h-44 w-[85%] bg-white rounded-xl py-4 px-6 flex items-center justify-between md:w-[30%] md:h-full"
       initial={{ x: '100%' }}
       animate={{ x: !burger ? '100%' : 0 }}
       transition={{ type: 'spring', damping: 23, delay: 0.4 }}

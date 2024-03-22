@@ -10,7 +10,7 @@ export default function MobileHeader({
   setModal: Dispatch<SetStateAction<boolean>>;
 }) {
   return (
-    <div className="h-[72px] w-full header flex items-center justify-between px-6 z-20">
+    <div className="h-[72px] w-full header flex items-center justify-between px-6 z-20 md:h-full md:rounded-lg ">
       <div className="text-white">
         <h1 className="font-bold">Frontend Mentor</h1>
         <p className="opacity-75 text-xs font-medium ">Feedback Board</p>
@@ -20,7 +20,7 @@ export default function MobileHeader({
           !burger ? 'shared/mobile/icon-hamburger.svg' : 'shared/mobile/icon-close.svg'
         }
         alt=""
-        className={`cursor-pointer ${burger ? 'h-4 w-4' : null}`}
+        className={`cursor-pointer md:hidden ${burger ? 'h-4 w-4' : null}`}
         onClick={() => {
           setBurger(!burger);
           setModal(false);
