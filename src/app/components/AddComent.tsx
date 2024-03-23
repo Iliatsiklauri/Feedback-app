@@ -16,16 +16,6 @@ export default function AddComent({ id }: { id: number }) {
   const jsonData = context.jsonData?.productRequests[id];
   const userData = context.jsonData?.currentUser;
 
-  const setComment = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (text !== '') {
-      const obj = {
-        id: 6,
-        content: text,
-        user: userData,
-      };
-
-
   return (
     <form
       className="w-[93%] h-[230px] bg-white rounded-xl flex flex-col items-start p-4 justify-center gap-3"
