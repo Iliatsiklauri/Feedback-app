@@ -16,7 +16,6 @@ export default function page({ params }: propType) {
   if (!context) {
     return <h1>context</h1>;
   }
-  const { jsonData, setJsonData } = context;
   return (
     <div className="w-full py-6 bg-[#F7F8FD] flex justify-center items-center flex-col">
       <div className="flex items-center justify-center w-[93%] flex-col gap-10">
