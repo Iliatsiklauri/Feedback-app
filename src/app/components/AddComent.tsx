@@ -1,7 +1,6 @@
 import React, { FormEvent, useContext, useState } from 'react';
 import Button from './Button';
 import { GlobalProvider } from '../GlobalStates';
-import { JSONData } from '../data';
 
 export default function AddComent({ id }: { id: number }) {
   const [length, setLength] = useState(250);
