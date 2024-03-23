@@ -25,21 +25,6 @@ export default function AddComent({ id }: { id: number }) {
         user: userData,
       };
 
-      const updatedComments = [...(jsonData?.comments ?? []), obj];
-      setJsonData((prevJsonData) => {
-        if (!prevJsonData) return null;
-        return {
-          ...prevJsonData,
-          productRequests: prevJsonData.productRequests.map((productRequest, index) => {
-            if (index !== id) return productRequest;
-            return { ...productRequest, comments: updatedComments };
-          }),
-        };
-      });
-    }
-
-    setText('');
-  };
 
   return (
     <form
