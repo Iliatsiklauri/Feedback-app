@@ -10,7 +10,6 @@ export default function page() {
   if (!context) {
     return <h1>no context</h1>;
   }
-  const { jsonData, setJsonData } = context;
   return (
     <div className="py-6 w-full bg-[#F7F8FD] flex items-center justify-center">
       <div className="w-[93%]  flex items-centerjustify-center flex-col gap-10">

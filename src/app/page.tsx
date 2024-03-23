@@ -1,5 +1,5 @@
 'use client';
-import { useState, useContext, useEffect } from 'react';
+import { useState, useContext } from 'react';
 import { BurgerStates, ProductRequest } from './data';
 import Link from 'next/link';
 import MobileHeader from './components/MobileHeader';
