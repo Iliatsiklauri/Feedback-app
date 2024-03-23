@@ -12,10 +12,6 @@ export default function AddComent({ id }: { id: number }) {
     return <h1>no context</h1>;
   }
 
-  const { setJsonData } = context;
-  const jsonData = context.jsonData?.productRequests[id];
-  const userData = context.jsonData?.currentUser;
-
   return (
     <form className="w-[93%] h-[230px] bg-white rounded-xl flex flex-col items-start p-4 justify-center gap-3">
       <p className="text-[#3A4374] font-bold text-lg">Add Comment</p>
