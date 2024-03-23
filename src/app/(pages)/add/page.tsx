@@ -6,10 +6,6 @@ import Link from 'next/link';
 import { useContext } from 'react';
 
 export default function page() {
-  const context = useContext(GlobalProvider);
-  if (!context) {
-    return <h1>no context</h1>;
-  }
   return (
     <div className="py-6 w-full bg-[#F7F8FD] flex items-center justify-center">
       <div className="w-[93%]  flex items-centerjustify-center flex-col gap-10">
