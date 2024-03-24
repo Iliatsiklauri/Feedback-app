@@ -11,11 +11,11 @@ export default function SortBox({ sort, setSortCat, sortCat }: PropType) {
       animate={{
         width: sort ? 200 : 0,
         height: sort ? 150 : 0,
-        y: sort ? 150 : 80,
+        y: sort ? 150 : 150,
         x: -20,
       }}
       transition={{ type: 'spring', damping: 15 }}
-      className="sortby absolute  bg-white rounded-xl "
+      className={`${sort ? 'block' : 'hidden'}  sortby absolute  bg-white rounded-xl `}
     >
       <motion.div
         className="w-full h-full flex flex-col"

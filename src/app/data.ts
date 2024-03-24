@@ -14,7 +14,7 @@ type User = {
   username: string;
 };
 
-type Comment = {
+export type Comment = {
   id: number;
   content: string;
   user: User;
@@ -27,7 +27,7 @@ type Reply = {
   user: User;
 };
 
-type ProductRequest = {
+export type ProductRequest = {
   id: number;
   title: string;
   category: string;

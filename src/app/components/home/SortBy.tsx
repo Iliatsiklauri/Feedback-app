@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from 'react';
-import Button from '../Button';
+import Button from './Button';
 import { motion } from 'framer-motion';
 type PropType = {
   sort: boolean;
@@ -9,9 +9,9 @@ type PropType = {
 
 export default function SortBy({ setSort, sort, sortCat }: PropType) {
   return (
-    <div className="w-full h-14 bg-[#373F68] flex items-center justify-between px-[6%]">
+    <div className="w-full h-14 bg-[#373F68] flex items-center justify-between px-[3%]">
       <div
-        className="flex w-[55%] h-5 items-center justify-center cursor-pointer text-left"
+        className="flex w-[50%] h-5 items-center justify-center cursor-pointer text-left gap-1"
         onClick={() => setSort(!sort)}
       >
         <p className="text-[#F2F4FE] text-[13px] w-[90%]  text-left flex gap-1">
