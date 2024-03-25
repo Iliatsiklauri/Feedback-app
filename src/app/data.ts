@@ -8,7 +8,7 @@ export type GlobalStates = {
 };
 export const GlobalProvider = createContext<GlobalStates | null>(null);
 
-type User = {
+export type User = {
   image: string;
   name: string;
   username: string;

@@ -8,7 +8,7 @@ export default function Comments({ comments }: propType) {
       <p className="text-[#3A4374] text-lg font-bold">{comments?.length || 0} Comments</p>
       {comments?.map((el, key) => (
         <div
-          className={`flex flex-col gap-3 ${
+          className={`flex flex-col gap-3 min-w-full ${
             key + 1 !== comments.length
               ? 'border-b-[1px] border-opacity-25 border-[#8C92B3] pb-6'
               : null
