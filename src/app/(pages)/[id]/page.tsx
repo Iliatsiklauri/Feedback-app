@@ -4,7 +4,7 @@ import Comments from '@/app/components/about/Comments';
 import Header from '@/app/components/about/Header';
 import Card from '@/app/components/home/Card';
 import { GlobalProvider } from '@/app/data';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 
 export default function page({ params }: { params: { id: number } }) {
   const [comment, setComment] = useState('');
@@ -14,14 +14,10 @@ export default function page({ params }: { params: { id: number } }) {
   }
   const { posts, user, setPosts } = context;
   const [data, setData] = useState(posts[params.id - 1]);
-  useEffect(() => {
-    const newArr = [...posts];
-    newArr[params.id - 1] = data;
-    setPosts(newArr);
-  }, [data]);
+
   return (
     <div className="flex flex-col justify-start items-center p-6 bg-[#F7F8FD] gap-6">
-      <Header />
+      <Header disp={true} />
       <Card
         id={data.id}
         category={`${data.category}`}
@@ -31,13 +27,12 @@ export default function page({ params }: { params: { id: number } }) {
         upvotes={data.upvotes}
         comments={data.comments}
       />
-      <Comments comments={data.comments} />
+      <Comments comments={data.comments} id={params.id} />
       <AddComment
         setComment={setComment}
         comment={`${comment}`}
-        data={data}
-        setData={setData}
         user={user}
+        id={params.id}
       />
     </div>
   );

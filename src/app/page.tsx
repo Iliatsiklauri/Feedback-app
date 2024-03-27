@@ -16,9 +16,6 @@ export default function Home() {
     return <h1>no context</h1>;
   }
   const { posts, setPosts } = context;
-  // useEffect(() => {
-  //   console.log(posts);
-  // }, []);
 
   return (
     <div className="flex flex-col items-center justify-start bg-[#F7F8FD]  relative min-h-[101vh]">

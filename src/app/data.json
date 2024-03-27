@@ -20,7 +20,8 @@
             "image": "./user-images/image-suzanne.jpg",
             "name": "Suzanne Chang",
             "username": "upbeat1811"
-          }
+          },
+          "replies": []
         },
         {
           "id": 2,
@@ -29,7 +30,8 @@
             "image": "./user-images/image-thomas.jpg",
             "name": "Thomas Hood",
             "username": "brawnybrave"
-          }
+          },
+          "replies": []
         }
       ]
     },
@@ -48,7 +50,8 @@
             "image": "./user-images/image-elijah.jpg",
             "name": "Elijah Moss",
             "username": "hexagon.bestagon"
-          }
+          },
+          "replies": []
         },
         {
           "id": 4,
@@ -96,7 +99,8 @@
             "image": "./user-images/image-george.jpg",
             "name": "George Partridge",
             "username": "soccerviewer8"
-          }
+          },
+          "replies": []
         }
       ]
     },
@@ -115,7 +119,8 @@
             "image": "./user-images/image-javier.jpg",
             "name": "Javier Pollard",
             "username": "warlikeduke"
-          }
+          },
+          "replies": []
         },
         {
           "id": 7,
@@ -124,7 +129,8 @@
             "image": "./user-images/image-roxanne.jpg",
             "name": "Roxanne Travis",
             "username": "peppersprime32"
-          }
+          },
+          "replies": []
         }
       ]
     },
@@ -163,7 +169,8 @@
             "image": "./user-images/image-jackson.jpg",
             "name": "Jackson Barker",
             "username": "countryspirit"
-          }
+          },
+          "replies": []
         }
       ]
     },
@@ -190,7 +197,8 @@
             "image": "./user-images/image-victoria.jpg",
             "name": "Victoria Mejia",
             "username": "arlen_the_marlin"
-          }
+          },
+          "replies": []
         },
         {
           "id": 11,
@@ -199,7 +207,8 @@
             "image": "./user-images/image-jackson.jpg",
             "name": "Jackson Barker",
             "username": "countryspirit"
-          }
+          },
+          "replies": []
         }
       ]
     },
@@ -218,7 +227,8 @@
             "image": "./user-images/image-george.jpg",
             "name": "George Partridge",
             "username": "soccerviewer8"
-          }
+          },
+          "replies": []
         }
       ]
     },
@@ -237,7 +247,8 @@
             "image": "./user-images/image-ryan.jpg",
             "name": "Ryan Welles",
             "username": "voyager.344"
-          }
+          },
+          "replies": []
         }
       ]
     },
@@ -256,7 +267,8 @@
             "image": "./user-images/image-suzanne.jpg",
             "name": "Suzanne Chang",
             "username": "upbeat1811"
-          }
+          },
+          "replies": []
         }
       ]
     },

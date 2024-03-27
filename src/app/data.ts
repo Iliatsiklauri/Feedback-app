@@ -18,10 +18,17 @@ export type Comment = {
   id: number;
   content: string;
   user: User;
-  replies?: Reply[];
+  replies: Reply[];
 };
 
-type Reply = {
+export type Comment1 = {
+  id?: number;
+  content: string;
+  user: User;
+  replies: Reply[];
+};
+
+export type Reply = {
   content: string;
   replyingTo: string;
   user: User;

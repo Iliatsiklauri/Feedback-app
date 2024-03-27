@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction } from 'react';
 import Button from './Button';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 type PropType = {
   sort: boolean;
   setSort: Dispatch<SetStateAction<boolean>>;
@@ -24,7 +25,9 @@ export default function SortBy({ setSort, sort, sortCat }: PropType) {
           <img src="shared\icon-arrow-down1.svg" alt="" className="h-[8px] w-[10px]" />
         </motion.div>
       </div>
-      <Button text="+ Add Feedback" color="#AD1FEA" width="134px" />
+      <Link href={'/add'}>
+        <Button text="+ Add Feedback" color="#AD1FEA" width="134px" />
+      </Link>
     </div>
   );
 }
