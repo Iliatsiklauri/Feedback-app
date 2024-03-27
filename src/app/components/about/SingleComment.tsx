@@ -68,8 +68,8 @@ export default function SingleComment({ el, comments, id }: propType) {
               if (!posts || !posts[id - 1] || el.id === undefined) {
                 return <h1>no context or id</h1>;
               }
-
-              posts[id - 1].comments[el.id - 1] = el;
+              const lastId = posts[posts.length - 1]?.id - 1 || 0;
+              posts[lastId].comments[lastId] = el;
               setPosts(main);
             }
 
